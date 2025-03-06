@@ -1,11 +1,11 @@
 package rpgclasses.buffs.ability;
 
 import necesse.entity.mobs.GameDamage;
-import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
+import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
+import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.PlayerInventorySlot;
 import necesse.inventory.item.Item;
 import necesse.inventory.item.toolItem.ToolItem;
 import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.GunProjectileToolItem;
@@ -31,8 +31,8 @@ public class PlasmaGrenadeBuff extends SimpleClassBuff {
     }
 
     @Override
-    public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, PlayerMob player, int attackHeight, InventoryItem item, PlayerInventorySlot slot, int animAttack) {
-        if (player.isServer() && item.item.type == Item.Type.TOOL) {
+    public void onItemAttacked(ActiveBuff buff, int targetX, int targetY, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack) {
+        if (attackerMob.isServer() && item.item.type == Item.Type.TOOL) {
             ToolItem toolItem = (ToolItem) item.item;
             if (toolItem instanceof GunProjectileToolItem) {
                 if (!Objects.equals(weapon, toolItem.getStringID())) {
@@ -48,7 +48,7 @@ public class PlasmaGrenadeBuff extends SimpleClassBuff {
                     } else if (abilityLevel == 2) {
                         damage = damage.setDamage(damage.damage * 2);
                     }
-                    player.getLevel().entityManager.projectiles.add(new PlasmaGrenadeProjectile(player.getLevel(), player, player.x, player.y, targetX, targetY, 200, 2000, damage, 0));
+                    attackerMob.getLevel().entityManager.projectiles.add(new PlasmaGrenadeProjectile(attackerMob.getLevel(), attackerMob, attackerMob.x, attackerMob.y, targetX, targetY, 200, 2000, damage, 0));
                     attacks = 0;
                 }
             }

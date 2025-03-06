@@ -41,7 +41,7 @@ public class WolfMob extends AttackingFollowingMob {
         this.ai = new BehaviourTreeAI<>(this, new PlayerFollowerCollisionChaserAI<WolfMob>(576, new GameDamage(0), 30, 500, 640, 64) {
             @Override
             public boolean attackTarget(WolfMob mob, Mob target) {
-                target.buffManager.addBuff(new ActiveBuff("markedbuff", target, 5000, mob.getFollowingServerPlayer()), true);
+                target.buffManager.addBuff(new ActiveBuff("markedbuff", target, 5000, mob.getFollowingMob()), true);
                 return super.attackTarget(mob, target);
             }
         });

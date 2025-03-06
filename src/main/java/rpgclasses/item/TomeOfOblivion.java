@@ -2,7 +2,7 @@ package rpgclasses.item;
 
 import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.LocalMessage;
-import necesse.engine.network.PacketReader;
+import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
@@ -21,13 +21,13 @@ public class TomeOfOblivion extends ConsumableItem {
     }
 
     @Override
-    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
+    public String canPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, GNDItemMap mapContent) {
         PlayerData playerData = PlayerDataList.getCurrentPlayer(player);
         return playerData.classAbilitiesStringIDs.isEmpty() ? "noabilities" : null;
     }
 
     @Override
-    public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, InventoryItem item, PacketReader contentReader) {
+    public InventoryItem onPlace(Level level, int x, int y, PlayerMob player, int seed, InventoryItem item, GNDItemMap mapContent) {
         if (player.isServerClient()) {
             ServerClient serverClient = player.getServerClient();
             PlayerData playerData = PlayerDataList.getCurrentPlayer(player);
@@ -59,7 +59,7 @@ public class TomeOfOblivion extends ConsumableItem {
             item.setAmount(item.getAmount() - 1);
         }
 
-        return super.onPlace(level, x, y, player, item, contentReader);
+        return super.onPlace(level, x, y, player, seed, item, mapContent);
     }
 
     @Override
