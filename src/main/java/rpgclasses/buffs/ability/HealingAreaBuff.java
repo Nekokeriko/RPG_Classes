@@ -41,7 +41,7 @@
                 AphArea area = areaList.areas[0];
                 mob.getServer().network.sendToAllClients(new AphSingleAreaShowPacket(mob.x, mob.y, area.range, area.colors[0]));
                 areaList.areas[0].setHealingArea((int) (mob.getMaxHealth() * 0.02F));
-                areaList.executeAreas(mob);
+                areaList.executeServer(mob);
             }
         }
     }

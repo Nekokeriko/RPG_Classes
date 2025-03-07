@@ -1,5 +1,6 @@
 package rpgclasses.projectiles;
 
+import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.gameAreaSearch.GameAreaStream;
 import necesse.entity.mobs.GameDamage;
@@ -66,20 +67,7 @@ public class PlasmaGrenadeProjectile extends FollowingProjectile {
 
     public void updateTarget() {
         if (this.traveledDistance > 50F) {
-            PlayerMob player = (PlayerMob) getOwner();
-
-            ArrayList<Mob> mobs = new ArrayList<>();
-            GameAreaStream<Mob> areaMobs = getLevel().entityManager.streamAreaMobsAndPlayers(x, y, (int) (distance - traveledDistance)).filter(
-                    m -> MarkedBuff.isMarked(player, m)
-            );
-            Objects.requireNonNull(mobs);
-            areaMobs.forEach(mobs::add);
-            mobs.sort((m1, m2) -> {
-                float d1 = m1.getDistance(x, y);
-                float d2 = m2.getDistance(x, y);
-                return Float.compare(d1, d2);
-            });
-            target = mobs.stream().findFirst().orElse(null);
+            target = AphDistances.findClosestMob(getLevel(), x, y, (int) (distance - traveledDistance + 100), m -> MarkedBuff.isMarked(getOwner(), m));
         }
 
     }

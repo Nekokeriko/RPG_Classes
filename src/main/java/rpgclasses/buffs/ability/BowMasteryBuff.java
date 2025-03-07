@@ -46,15 +46,13 @@ public class BowMasteryBuff extends SimpleClassBuff {
                 }
                 BowProjectileToolItem projectileToolItem = (BowProjectileToolItem) toolItem;
 
-                Packet attackContent = new Packet();
-                PacketReader contentReader = new PacketReader(attackContent);
                 int seed = Item.getRandomAttackSeed(GameRandom.globalRandom);
 
                 Item arrow = ItemRegistry.getItem("unstablegelarrow");
 
                 int newTargetX;
                 int newTargetY;
-                Mob targetMob = AphDistances.findClosestMob(attackerMob, m -> MarkedBuff.isMarked(attackerMob, m), 500);
+                Mob targetMob = AphDistances.findClosestMob(attackerMob, 500, m -> MarkedBuff.isMarked(attackerMob, m));
                 if (targetMob == null) {
                     newTargetX = GameRandom.globalRandom.getIntOffset(targetX, 32);
                     newTargetY = GameRandom.globalRandom.getIntOffset(targetY, 32);
