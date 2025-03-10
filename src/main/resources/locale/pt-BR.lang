@@ -88,10 +88,10 @@ abilityunlocked=Você desbloqueou a habilidade <ability> de nível <level>!
 alreadyprincipalability=Você já desbloqueou a habilidade principal de uma classe
 newmobkill=Você ganhou <exp> de experiência por matar <mob> pela primeira vez
 newlevel=Parabéns! Você atingiu o nível <level>. Pressione [input=openclassesmenu] para usar seu novo Ponto de Talento!
-talentpointsrestarted=Você reembolsou todas as suas habilidades
-talentpointsrestarted8=Você reembolsou suas últimas 8 habilidades:\n- <hab0>\n- <hab1>\n- <hab2>\n- <hab3>\n- <hab4>\n- <hab5>\n- <hab6>\n- <hab7>
-talentpointsrestarted3=Você reembolsou suas últimas 3 habilidades:\n- <hab0>\n- <hab1>\n- <hab2>
-talentpointsrestarted1=Você reembolsou sua última habilidade: <hab>
+talentpointsrestarted=Você reiniciou todas as suas habilidades
+talentpointsrestarted8=Você reiniciou suas últimas 8 habilidades:\n- <hab0>\n- <hab1>\n- <hab2>\n- <hab3>\n- <hab4>\n- <hab5>\n- <hab6>\n- <hab7>
+talentpointsrestarted3=Você reiniciou suas últimas 3 habilidades:\n- <hab0>\n- <hab1>\n- <hab2>
+talentpointsrestarted1=Você reiniciou sua última habilidade: <hab>
 
 
 [controls]
