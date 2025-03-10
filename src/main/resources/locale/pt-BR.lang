@@ -126,7 +126,7 @@ alreadyprincipalability=§6Você já desbloqueou a habilidade principal de uma c
 clicktounlock=[input=mouse1] para desbloquear
 
 // Subclasses
-warrior_0=+20% de dano corpo a corpo e à distância\nDano aos atacantes baseado na sua armadura\nMetade do dano a atacantes à distanciâ\n-50% de Mana
+warrior_0=+20% de dano corpo a corpo e à distância\nDano aos atacantes baseado na sua armadura\nMetade do dano a atacantes à distancia\n-50% de Mana
 barbarian_0=+100% de Saúde Total e Regeneração de Saúde\nAumenta o dano corpo a corpo e a velocidade enquanto\nataca em +1% para cada 1% de saúde perdida\nSua armadura, resistência e mana serão sempre 0
 
 assassin_0=+50% de Dano Crítico Corpo a Corpo\n+10% de Chance Crítica, +20% de Chance de Esquiva\n-25% de Armadura e -25% de Saúde Máxima
