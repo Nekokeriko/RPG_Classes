@@ -1,3 +1,5 @@
+# Translation made by Aurora (https://steamcommunity.com/id/rivotrilprime/)
+
 [global]
 rpgclasses=§!RPG Classes
 
@@ -51,7 +53,7 @@ graceful=Graça
 
 // Habilidades
 ironwill=Vontade de Ferro
-armoredflesh=Carne Blindada
+armoredflesh=Pele Blindada
 frenziedguard=Guarda Frenética
 bloodhaste=Fúria de Sangue
 relentlessstrikes=Golpes Implacáveis
@@ -303,9 +305,9 @@ relentlessstrikes_0=Acertar um ataque corpo-a-corpo concede +10% de Velocidade d
 relentlessstrikes_1=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Ataque por 2 segundos\nPode acumular até 4 vezes
 relentlessstrikes_2=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Ataque por 2 segundos\nPode acumular até 8 vezes
 
-relentlesschase_0=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Movimento por 2 segundos\nPode acumular até 2 vezes
-relentlesschase_1=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Movimento por 2 segundos\nPode acumular até 4 vezes
-relentlesschase_2=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Movimento por 2 segundos\nPode acumular até 8 vezes
+relentlesschase_0=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Movimento\npor 2 segundos\nPode acumular até 2 vezes
+relentlesschase_1=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Movimento\npor 2 segundos\nPode acumular até 4 vezes
+relentlesschase_2=Acertar um ataque corpo-a-corpo concede +10% de Velocidade de Movimento\npor 2 segundos\nPode acumular até 8 vezes
 
 relentlessevasion_0=Acertar um ataque corpo-a-corpo concede +3% de Chance de Esquiva por 2 segundos\nPode acumular até 2 vezes
 relentlessevasion_1=Acertar um ataque corpo-a-corpo concede +3% de Chance de Esquiva por 2 segundos\nPode acumular até 4 vezes
