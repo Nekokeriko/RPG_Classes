@@ -107,9 +107,9 @@ public final class AbilityRegistry {
         registerBuff("lethality_5", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.CRIT_CHANCE, 0.16F), new ModifierValue<>(BuffModifiers.MELEE_CRIT_DAMAGE, 0.4F)));
 
         registerAbility(new Ability("swiftness", 6, 1));
-        registerBuff("swiftness_0", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.03F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.3F)));
-        registerBuff("swiftness_1", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.06F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.6F)));
-        registerBuff("swiftness_2", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.09F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.9F)));
+        registerBuff("swiftness_0", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.03F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.03F)));
+        registerBuff("swiftness_1", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.06F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.06F)));
+        registerBuff("swiftness_2", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.09F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.09F)));
         registerBuff("swiftness_3", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.12F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.12F)));
         registerBuff("swiftness_4", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.18F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.18F)));
         registerBuff("swiftness_5", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.SPEED, 0.24F), new ModifierValue<>(RPG_Classes.DODGE_CHANCE, 0.24F)));
