@@ -76,7 +76,7 @@ public class ClassesContainerForm extends ContainerFormSwitcher<ClassesContainer
                 new FontOptions(12), -1, playerDataComponent.getX(), 50
         ));
         playerDataComponent.addComponent(new FormLocalLabel(
-                new LocalMessage("classescontainer", "totalexperience", "exp", playerData.exp),
+                new LocalMessage("classescontainer", "totalexperience", "exp", playerData.getExp()),
                 new FontOptions(12), -1, playerDataComponent.getX(), 70
         ));
 

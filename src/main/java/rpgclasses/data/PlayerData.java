@@ -9,6 +9,7 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.Config;
 import rpgclasses.base.Ability;
 import rpgclasses.buffs.SimpleClassBuff;
+import rpgclasses.buffs.SummonsNerfBuff;
 import rpgclasses.packets.ShowModExpPacket;
 import rpgclasses.registry.AbilityRegistry;
 
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class PlayerData {
     public final String playerName;
-    public int exp;
+    private int exp;
     public List<String> classAbilitiesStringIDs;
     public List<String> classActiveAbilitiesStringIDs;
 
@@ -29,7 +30,7 @@ public class PlayerData {
 
     public void loadData(LoadData loadData) {
         loadData(
-                loadData.getInt("exp", Config.getConfig().getStartingExperience()),
+                loadData.getInt("exp", 0),
                 loadData.getStringArray("abilities", new String[0])
         );
     }
@@ -138,33 +139,35 @@ public class PlayerData {
         return maxLevels;
     }
 
+    public int getBaseExp() {
+        return this.exp;
+    }
+
+    public int getExp() {
+        return this.exp + Config.getConfig().getStartingExperience();
+    }
+
     public int getExpActual() {
-        return this.exp - getExpRequiredForLevel(this.getLevel());
+        return this.getExp() - getExpRequiredForLevel(this.getLevel());
     }
 
     public int getExpNext() {
         return getExpRequiredForLevel(this.getLevel() + 1) - getExpRequiredForLevel(getLevel());
     }
 
-    private int getExpRequiredForLevel(int level) {
-        Config config = Config.getConfig();
-        int firstExperienceReq = config.getFirstExperienceReq();
-        int experienceReqInc = config.getExperienceReqInc();
-        int squareExperienceReqInc = config.getSquareExperienceReqInc();
-        int cubeExperienceReqInc = config.getCubeExperienceReqInc();
+    public int getExpRequiredForLevel(int level, Config config) {
+        return level * config.getFirstExperienceReq() + config.getExperienceReqInc() * (level * (level - 1)) / 2 + config.getSquareExperienceReqInc() * (level * (level - 1) * (2 * level - 1)) / 6 + config.getCubeExperienceReqInc() * (int)Math.pow((double)(level * (level - 1)) / 2, 2);
+    }
 
-        int totalExp = 0;
-        for (int i = 0; i < level; i++) {
-            totalExp += (int) (firstExperienceReq + (experienceReqInc * i)
-                    + (squareExperienceReqInc * Math.pow(i, 2))
-                    + (cubeExperienceReqInc * Math.pow(i, 3)));
-        }
-        return totalExp;
+
+    private int getExpRequiredForLevel(int level) {
+        return getExpRequiredForLevel(level, Config.getConfig());
     }
 
     public int getLevel() {
         int level = 0;
-        while (getExpRequiredForLevel(level + 1) <= this.exp) {
+        Config config = Config.getConfig();
+        while (getExpRequiredForLevel(level + 1, config) <= this.getExp()) {
             level++;
         }
         return level;
@@ -192,7 +195,6 @@ public class PlayerData {
                         if (hasBuff) {
                             player.buffManager.removeBuff(stringID, true);
                         } else {
-                            System.out.println(stringID);
                             ActiveBuff providedBuff = new ActiveBuff(stringID, player, 1000, null);
                             player.buffManager.addBuff(providedBuff, true);
                             if (providedBuff.buff instanceof SimpleClassBuff)
@@ -201,21 +203,30 @@ public class PlayerData {
                     }
                 }
             }
+
+            if(haveAtLeastOneAbility(SummonsNerfBuff.evadeNerfSummonsBuffs)) {
+                if(player.buffManager.hasBuff(SummonsNerfBuff.stringID)) {
+                    player.buffManager.removeBuff(SummonsNerfBuff.stringID, true);
+                }
+            } else {
+                player.buffManager.addBuff(new ActiveBuff(SummonsNerfBuff.stringID, player, 1000, null), true);
+            }
         }
     }
 
-    public boolean haveAtLeastOneAbility(List<String> principalAbilities) {
+    public boolean haveAtLeastOneAbility(List<String> abilities) {
         for (String abilityStringID : classAbilitiesStringIDs) {
-            if (principalAbilities.contains(abilityStringID)) {
+            if (abilities.contains(abilityStringID)) {
                 return true;
             }
         }
         return false;
     }
 
-    public void modExp(ServerClient serverClient, int exp) {
+    public void modExp(ServerClient serverClient, int amount) {
         int antLevel = this.getLevel();
-        this.exp += exp;
+
+        this.exp += amount;
 
         boolean levelUp = antLevel < this.getLevel();
         while (antLevel < this.getLevel()) {
@@ -223,7 +234,7 @@ public class PlayerData {
             serverClient.sendChatMessage(new LocalMessage("classmessage", "newlevel", "level", antLevel));
         }
 
-        serverClient.getServer().network.sendToAllClients(new ShowModExpPacket(serverClient.playerMob.getX(), serverClient.playerMob.getY(), exp, levelUp));
+        serverClient.getServer().network.sendToAllClients(new ShowModExpPacket(serverClient.playerMob.getX(), serverClient.playerMob.getY(), amount, levelUp));
     }
 
 }

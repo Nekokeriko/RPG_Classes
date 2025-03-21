@@ -67,7 +67,7 @@ public class ShowModExpPacket extends Packet {
             }
 
             PlayerData playerData = PlayerDataList.getCurrentPlayer(client.getPlayer());
-            playerData.loadData(playerData.exp + exp);
+            playerData.loadData(playerData.getBaseExp() + exp);
             ExpBarManger.updateExpBar(playerData);
         }
     }

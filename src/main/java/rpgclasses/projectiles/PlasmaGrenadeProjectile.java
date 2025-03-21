@@ -2,7 +2,6 @@ package rpgclasses.projectiles;
 
 import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
-import necesse.engine.util.gameAreaSearch.GameAreaStream;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -20,9 +19,7 @@ import rpgclasses.buffs.MarkedBuff;
 import rpgclasses.levelevents.PlasmaGrenadeExplosionLevelEvent;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PlasmaGrenadeProjectile extends FollowingProjectile {
     public PlasmaGrenadeProjectile() {
@@ -69,7 +66,6 @@ public class PlasmaGrenadeProjectile extends FollowingProjectile {
         if (this.traveledDistance > 50F) {
             target = AphDistances.findClosestMob(getLevel(), x, y, (int) (distance - traveledDistance + 100), m -> MarkedBuff.isMarked(getOwner(), m));
         }
-
     }
 
     @Override

@@ -30,6 +30,7 @@ import rpgclasses.base.ClassAbility;
 import rpgclasses.base.RPGClass;
 import rpgclasses.buffs.DodgeBuff;
 import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.buffs.SummonsNerfBuff;
 import rpgclasses.commands.ModExp;
 import rpgclasses.commands.ResetTalentPoints;
 import rpgclasses.containers.ClassesContainer;
@@ -38,14 +39,12 @@ import rpgclasses.item.CodexOfOblivion;
 import rpgclasses.item.GrimoireOfOblivion;
 import rpgclasses.item.ScrollOfOblivion;
 import rpgclasses.item.TomeOfOblivion;
+import rpgclasses.item.weapons.BasicStaff;
 import rpgclasses.item.weapons.BasicWand;
 import rpgclasses.levelevents.FireWandExplosionLevelEvent;
 import rpgclasses.levelevents.IceWandExplosionLevelEvent;
 import rpgclasses.levelevents.PlasmaGrenadeExplosionLevelEvent;
 import rpgclasses.levelevents.ThunderWandLevelEvent;
-import rpgclasses.mobs.BasicSkeleton;
-import rpgclasses.mobs.MeleeSkeleton;
-import rpgclasses.mobs.RangeSkeleton;
 import rpgclasses.mobs.WolfMob;
 import rpgclasses.packets.*;
 import rpgclasses.projectiles.*;
@@ -99,6 +98,7 @@ public class RPG_Classes {
         PacketRegistry.registerPacket(UpdateClientAbilitiesPacket.class);
 
         ItemRegistry.registerItem("basicwand", new BasicWand(), -1F, true);
+        ItemRegistry.registerItem("basicstaff", new BasicStaff(), -1F, true);
         ItemRegistry.registerItem("scrollofoblivion", new ScrollOfOblivion(), 100F, true);
         ItemRegistry.registerItem("tomeofoblivion", new TomeOfOblivion(), 250F, true);
         ItemRegistry.registerItem("codexofoblivion", new CodexOfOblivion(), 500F, true);
@@ -108,19 +108,18 @@ public class RPG_Classes {
         CommandsManager.registerServerCommand(new ResetTalentPoints());
 
         MobRegistry.registerMob("wolf", WolfMob.class, false);
-        MobRegistry.registerMob("basicskeleton", BasicSkeleton.class, false);
-        MobRegistry.registerMob("meleeskeleton", MeleeSkeleton.class, false);
-        MobRegistry.registerMob("rangeskeleton", RangeSkeleton.class, false);
 
         ProjectileRegistry.registerProjectile("basicwand", BasicWandProjectile.class, "none", "none");
+        ProjectileRegistry.registerProjectile("basicstaff", BasicStaffProjectile.class, "none", "none");
         ProjectileRegistry.registerProjectile("firewand", FireWandProjectile.class, "none", "none");
         ProjectileRegistry.registerProjectile("icewand", IceWandProjectile.class, "none", "none");
         ProjectileRegistry.registerProjectile("thunderwand", ThunderWandProjectile.class, "none", "none");
         ProjectileRegistry.registerProjectile("plasmagrenade", PlasmaGrenadeProjectile.class, "none", "none");
         ProjectileRegistry.registerProjectile("rangeskeleton", RangeSkeletonProjectile.class, "babybone", "babybone_shadow");
 
-        BuffRegistry.registerBuff("markedbuff", new MarkedBuff());
         BuffRegistry.registerBuff("dodgebuff", new DodgeBuff());
+        BuffRegistry.registerBuff(SummonsNerfBuff.stringID, new SummonsNerfBuff());
+        BuffRegistry.registerBuff("markedbuff", new MarkedBuff());
 
         AbilityRegistry.registerCore();
         RPGClassRegistry.registerCore();
@@ -173,6 +172,7 @@ public class RPG_Classes {
     public void postInit() {
         AphRecipes.addCraftingList("leatherdashers", RecipeTechRegistry.WORKSTATION, AphRecipes.AphCraftingRecipe.showBefore("basicwand", 1, new Ingredient("anylog", 10), new Ingredient("firemone", 1)));
         AphRecipes.addCraftingList("woodstaff", RecipeTechRegistry.IRON_ANVIL, AphRecipes.AphCraftingRecipe.showBefore("basicwand", 1, new Ingredient("anylog", 10), new Ingredient("firemone", 1)));
+        AphRecipes.addCraftingList("basicwand", RecipeTechRegistry.IRON_ANVIL, AphRecipes.AphCraftingRecipe.showBefore("basicstaff", 1, new Ingredient("anylog", 10), new Ingredient("firemone", 1)));
 
         UnstableGelSlime.privateLootTable.items.add(
                 new ChanceLootItem(0.1F, "scrollofoblivion")

@@ -27,7 +27,6 @@ sniper=Tirador
 beastmaster=Maestro de las Bestias
 apprentice=Aprendiz
 wizard=Mago
-necromancer=Nigromante
 priest=Clérigo
 paladin=Paladín
 
@@ -72,8 +71,6 @@ icereaction=Reacción de Hielo
 thunderreaction=Reacción del Trueno
 evasiveinstinct=Instinto Evasivo
 evasivelethality=Letalidad Evasiva
-meleeskeleton=Esqueleto Guerrero
-rangeskeleton=Esqueleto Lanzador
 healingarea=Área Curativa
 sacredjudgment=Juicio Sagrado
 
@@ -140,7 +137,7 @@ beastmaster_0=+100% Daño Crítico Range\nTu amigo lobo marca 5 segundos a los e
 apprentice_0=+100% Maná Máx, +100% Regen. de Maná\n-50% Armadura y -25% Vida Máx
 wizard_0=+200% Daño Mágico, +100% Regen. de Maná\nNo penalización de movimiento al atacar\n+50% Uso de Maná, -100% to all Daño no Mágico\n-50% Armadura, -50% Vida Máx, -50% Velocidad
 
-necromancer_0=Invoca un Esqueleto Bássico por cada invocación máx\nque puedas tener. Daña según 0.5% vida máx de los\nenemigos, reducido a humanos y bosses\n-50% Armadura y -50% Vida Máx
+summoner_0=Evita el nerf predeterminado en las invocaciones:\n> -25% de Daño de Invocación, limitado a +0%\n\n-25% de Armadura, -25% de Vida Máx
 
 priest_0=+100% Curación Mágica\n-50% Armadura y -50% Vida Máx
 paladin_0=+50% Armadura, +50% Curación Mágica Recibida\n-25% Velocidad, -50% Vel. de Ataque
@@ -367,14 +364,6 @@ icereaction_2=Ejecuta el efecto de Varita de Hielo cuando recibes daño\nCooldow
 thunderreaction_0=Ejecuta el efecto de Varita del Trueno cuando recibes daño\nCooldown: 16 segundos
 thunderreaction_1=Ejecuta el efecto de Varita del Trueno cuando recibes daño\nCooldown: 8 segundos
 thunderreaction_2=Ejecuta el efecto de Varita del Trueno cuando recibes daño\nCooldown: 4 segundos
-
-meleeskeleton_0=Invoca 1 Esqueleto Guerrero que daña con el 1% de la vida máx de los enemigos\nEl daño es reducido contra humanos y aún más contra bosses
-meleeskeleton_1=Invoca 2 Esqueleto Guerrero que daña con el 1% de la vida máx de los enemigos\nEl daño es reducido contra humanos y aún más contra bosses
-meleeskeleton_2=Invoca 3 Esqueleto Guerrero que daña con el 1% de la vida máx de los enemigos\nEl daño es reducido contra humanos y aún más contra bosses
-
-rangeskeleton_0=Invoca 1 Esqueleto Lanzador que daña con el 1% de la vida máx de los enemigos\nEl daño es reducido contra humanos y aún más contra bosses
-rangeskeleton_1=Invoca 2 Esqueleto Lanzador que daña con el 1% de la vida máx de los enemigos\nEl daño es reducido contra humanos y aún más contra bosses
-rangeskeleton_2=Invoca 3 Esqueleto Lanzador que daña con el 1% de la vida máx de los enemigos\nEl daño es reducido contra humanos y aún más contra bosses
 
 healingarea_0=Libera un área de curación mágica cada 12 segundos,\nrecuperando el 2% de tu máx Vida a ti y aliados cercanos\nEscala con Curación Mágica
 healingarea_1=Libera un área de curación mágica cada 9 segundos,\nrecuperando el 2% de tu máx Vida a ti y aliados cercanos\nEscala con Curación Mágica

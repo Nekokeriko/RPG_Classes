@@ -27,7 +27,6 @@ sniper=Francotirador
 beastmaster=Mestre das Feras
 apprentice=Aprendiz
 wizard=Mago
-necromancer=Necromante
 priest=Sacerdote
 paladin=Paladino
 
@@ -72,8 +71,6 @@ icereaction=Reação de Gelo
 thunderreaction=Reação de Trovão
 evasiveinstinct=Instinto Evasivo
 evasivelethality=Letalidade Evasiva
-meleeskeleton=Esqueleto Corpo-a-Corpo
-rangeskeleton=Esqueleto Atirador
 healingarea=Área de Cura
 sacredjudgment=Julgamento Sagrado
 
@@ -140,7 +137,7 @@ beastmaster_0=+100% de Dano Crítico à Distância\nSeu companheiro lobo marca i
 apprentice_0=+100% de Mana Máxima, +100% de Regeneração de Mana\n-50% de Armadura e -25% de Saúde Máxima
 wizard_0=+200% de Dano Mágico, +100% de Regeneração de Mana\nSem penalização de movimento ao atacar\n+50% no Uso de Mana, -100% em todo dano não mágico\n-50% de Armadura, -50% de Saúde, -50% de Velocidade
 
-necromancer_0=Invoca um Esqueleto Básico para cada invocação máxima\nque você pode ter. 0,5% da Saúde Máxima dos inimigos\ncomo dano, reduzido contra humanos e chefes\n-50% de Armadura e -50% de Saúde Máxima
+summoner_0=Evite o nerf padrão nas invocações: \n> -25% de Dano de Invocação, limitado a +0%\n\n-25% de Armadura, -25% de Saúde
 
 priest_0=+100% de Cura Mágica\n-50% de Armadura e -50% de Saúde Máxima
 paladin_0=+50% de Armadura, +50% de Cura Mágica Recebida\n-25% de Velocidade de Movimento\n-50% de Velocidade de Ataque
@@ -367,14 +364,6 @@ icereaction_2=Executa o efeito da Varinha de Gelo em você quando recebe dano\nT
 thunderreaction_0=Executa o efeito da Varinha de Trovão em você quando recebe dano\nTempo de recarga: 16 segundos
 thunderreaction_1=Executa o efeito da Varinha de Trovão em você quando recebe dano\nTempo de recarga: 8 segundos
 thunderreaction_2=Executa o efeito da Varinha de Trovão em você quando recebe dano\nTempo de recarga: 4 segundos
-
-meleeskeleton_0=Invoca 1 Esqueleto Corpo a Corpo que causa 1% da saúde máxima dos inimigos como dano\nO dano é drasticamente reduzido contra humanos e ainda mais contra chefes
-meleeskeleton_1=Invoca 2 Esqueletos Corpo a Corpo que causam 1% da saúde máxima dos inimigos como dano\nO dano é drasticamente reduzido contra humanos e ainda mais contra chefes
-meleeskeleton_2=Invoca 3 Esqueletos Corpo a Corpo que causam 1% da saúde máxima dos inimigos como dano\nO dano é drasticamente reduzido contra humanos e ainda mais contra chefes
-
-rangeskeleton_0=Invoca 1 Esqueleto Atirador que causa 1% da saúde máxima dos inimigos como dano\nO dano é drasticamente reduzido contra humanos e ainda mais contra chefes
-rangeskeleton_1=Invoca 2 Esqueletos Atirador que causam 1% da saúde máxima dos inimigos como dano\nO dano é drasticamente reduzido contra humanos e ainda mais contra chefes
-rangeskeleton_2=Invoca 3 Esqueletos Atirador que causam 1% da saúde máxima dos inimigos como dano\nO dano é drasticamente reduzido contra humanos e ainda mais contra chefes
 
 healingarea_0=Libera uma área de cura mágica a cada 12 segundos,\nrestaurando 2% da sua Saúde Máxima para você e todos os aliados próximos\nEscala com Cura Mágica
 healingarea_1=Libera uma área de cura mágica a cada 9 segundos,\nrestaurando 2% da sua Saúde Máxima para você e todos os aliados próximos\nEscala com Cura Mágica

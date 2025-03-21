@@ -10,8 +10,6 @@ public class OnDisplayForm {
     static void onExit(@Advice.This MainGameFormManager mainGameFormManager) {
         ExpBarManger.mainGameFormManager = mainGameFormManager;
         ExpBarManger.barForm = mainGameFormManager.addComponent(new BarForm("expbar", 408, 6));
-        int x = mainGameFormManager.toolbar.getX();
-        int y = mainGameFormManager.toolbar.getY() - 17;
-        ExpBarManger.barForm.setPosition(x, y);
+        ExpBarManger.updateExpBarPosition(mainGameFormManager);
     }
 }

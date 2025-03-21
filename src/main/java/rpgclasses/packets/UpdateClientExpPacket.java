@@ -27,7 +27,7 @@ public class UpdateClientExpPacket extends Packet {
 
     public UpdateClientExpPacket(String name, PlayerData playerData) {
         this.name = name;
-        this.exp = playerData.exp;
+        this.exp = playerData.getBaseExp();
 
         PacketWriter writer = new PacketWriter(this);
 

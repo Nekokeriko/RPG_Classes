@@ -25,5 +25,8 @@ public class StarterItemsPatch {
         if (playerInventoryManager.getAmount(ItemRegistry.getItem("basicwand"), false, false, false, false, "startitem") == 0) {
             playerInventoryManager.main.addItem(playerInventoryManager.player.getLevel(), playerInventoryManager.player, new InventoryItem("basicwand"), "startitem", null);
         }
+        if (playerInventoryManager.getAmount(ItemRegistry.getItem("basicstaff"), false, false, false, false, "startitem") == 0) {
+            playerInventoryManager.main.addItem(playerInventoryManager.player.getLevel(), playerInventoryManager.player, new InventoryItem("basicstaff"), "startitem", null);
+        }
     }
 }

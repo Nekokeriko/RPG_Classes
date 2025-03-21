@@ -9,6 +9,7 @@ import necesse.entity.mobs.buffs.staticBuffs.ShownCooldownBuff;
 import rpgclasses.RPG_Classes;
 import rpgclasses.base.Ability;
 import rpgclasses.buffs.SimpleClassBuff;
+import rpgclasses.buffs.SummonsNerfBuff;
 import rpgclasses.buffs.ability.*;
 import rpgclasses.buffs.principalability.*;
 
@@ -55,8 +56,9 @@ public final class AbilityRegistry {
         registerAbility(new Ability("wizard", 1, 3));
         registerBuff("wizard_0", new WizardBuff());
 
-        registerAbility(new Ability("necromancer", 1, 3));
-        registerBuff("necromancer_0", new NecromancerBuff());
+        registerAbility(new Ability("summoner", 1, 3));
+        registerBuff("summoner_0", new SummonerBuff());
+        SummonsNerfBuff.evadeNerfSummonsBuffs.add("summoner_0");
 
         registerAbility(new Ability("priest", 1, 3));
         registerBuff("priest_0", new PriestBuff());
@@ -174,7 +176,7 @@ public final class AbilityRegistry {
         registerBuff("arcaneprecision_4", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.CRIT_CHANCE, 0.12F), new ModifierValue<>(BuffModifiers.MAGIC_CRIT_DAMAGE, 0.3F)));
         registerBuff("arcaneprecision_5", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.CRIT_CHANCE, 0.16F), new ModifierValue<>(BuffModifiers.MAGIC_CRIT_DAMAGE, 0.4F)));
 
-        registerAbility(new Ability("abundantarmy", 6, 2));
+        registerAbility(new Ability("abundantarmy", 6, 3));
         registerBuff("abundantarmy_0", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 1)));
         registerBuff("abundantarmy_1", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 2)));
         registerBuff("abundantarmy_2", new SimpleClassBuff(new ModifierValue<>(BuffModifiers.MAX_SUMMONS, 3)));
@@ -295,12 +297,6 @@ public final class AbilityRegistry {
         registerAbility(new Ability("thunderreaction", 3, 1, 1, 2));
         registerBuffs("thunderreaction", ThunderReactionBuff.class, 3);
         BuffRegistry.registerBuff("thunderreactioncooldown", new ShownCooldownBuff());
-
-        registerAbility(new Ability("meleeskeleton", 3, 2));
-        registerBuffs("meleeskeleton", MeleeSkeletonBuff.class, 3);
-
-        registerAbility(new Ability("rangeskeleton", 3, 2));
-        registerBuffs("rangeskeleton", RangeSkeletonBuff.class, 3);
 
         registerAbility(new Ability("healingarea", 4, 1, 1, 2, 3));
         registerBuffs("healingarea", HealingAreaBuff.class, 4);

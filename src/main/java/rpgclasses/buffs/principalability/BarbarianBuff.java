@@ -11,10 +11,7 @@ public class BarbarianBuff extends SimpleClassBuff {
         super(
                 new ModifierValue<>(BuffModifiers.MAX_HEALTH, 1F),
                 new ModifierValue<>(BuffModifiers.HEALTH_REGEN, 1F),
-                new ModifierValue<>(BuffModifiers.COMBAT_HEALTH_REGEN, 1F),
-                new ModifierValue<>(BuffModifiers.ARMOR, -1000F),
-                new ModifierValue<>(BuffModifiers.MAX_RESILIENCE, -1000F),
-                new ModifierValue<>(BuffModifiers.MAX_MANA, -1000F)
+                new ModifierValue<>(BuffModifiers.COMBAT_HEALTH_REGEN, 1F)
         );
     }
 
@@ -22,9 +19,9 @@ public class BarbarianBuff extends SimpleClassBuff {
     public void init(ActiveBuff buff, BuffEventSubscriber eventSubscriber) {
         super.init(buff, eventSubscriber);
         updateBuff(buff);
-        buff.setMaxModifier(BuffModifiers.ARMOR, -1000F);
-        buff.setMaxModifier(BuffModifiers.MAX_RESILIENCE, -1000F);
-        buff.setMaxModifier(BuffModifiers.MAX_MANA, -1000F);
+        new ModifierValue<>(BuffModifiers.ARMOR, -1F).max(-1F).apply(buff);
+        new ModifierValue<>(BuffModifiers.MAX_RESILIENCE, -1F).max(-1F).apply(buff);
+        new ModifierValue<>(BuffModifiers.MAX_MANA, -1F).max(-1F).apply(buff);
     }
 
     @Override

@@ -10,9 +10,7 @@ public class OnWindowResized {
     @Advice.OnMethodExit
     static void onExit(@Advice.This MainGameFormManager mainGameFormManager) {
         if (ExpBarManger.barForm != null) {
-            int x = mainGameFormManager.toolbar.getX();
-            int y = mainGameFormManager.toolbar.getY() - 17;
-            ExpBarManger.barForm.setPosition(x, y);
+            ExpBarManger.updateExpBarPosition(mainGameFormManager);
         }
     }
 }

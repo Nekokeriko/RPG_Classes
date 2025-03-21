@@ -29,7 +29,7 @@ public class UpdateClientDataPacket extends Packet {
 
     public UpdateClientDataPacket(String name, PlayerData playerData) {
         this.name = name;
-        this.exp = playerData.exp;
+        this.exp = playerData.getBaseExp();
         this.abilities = playerData.classAbilitiesStringIDs.toArray(new String[0]);
 
         PacketWriter writer = new PacketWriter(this);

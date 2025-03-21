@@ -27,7 +27,6 @@ sniper=Sniper
 beastmaster=Beast Master
 apprentice=Apprentice
 wizard=Wizard
-necromancer=Necromancer
 priest=Priest
 paladin=Paladin
 
@@ -72,8 +71,6 @@ icereaction=Ice Reaction
 thunderreaction=Thunder Reaction
 evasiveinstinct=Evasive Instinct
 evasivelethality=Evasive Lethality
-meleeskeleton=Melee Skeleton
-rangeskeleton=Range Skeleton
 healingarea=Healing Area
 sacredjudgment=Sacred Judgment
 
@@ -140,7 +137,7 @@ beastmaster_0=+100% Range Crit Damage\nYour new wolf companion marks enemies for
 apprentice_0=+100% Max Mana, +100% Mana Regen\n-50% Armor and -25% Max Health
 wizard_0=+200% Magic Damage, +100% Mana Regen\nNo movement penalization when attacking\n+50% Mana Usage, -100% to all non-Magic Damage\n-50% Armor, -50% Max Health, -50% Movement Speed
 
-necromancer_0=Summon a Basic Skeleton for each max summon\nyou can have. 0.5% enemies max health as damage\nreduced to humans and bosses\n-50% Armor and -50% Max Health
+summoner_0=Bypass default summons nerf:\n> -25% Summon Damage, capped at +0%\n\n-25% Armor, -25% Max Health
 
 priest_0=+100% Magic Healing\n-50% Armor and -50% Max Health
 paladin_0=+50% Armor, +50% Magic Healing Received\n-25% Movement Speed, -50% Attack Speed
@@ -367,14 +364,6 @@ icereaction_2=Executes the effect of Ice Wand on you when you receive damage\nCo
 thunderreaction_0=Executes the effect of Thunder Wand on you when you receive damage\nCooldown: 16 seconds
 thunderreaction_1=Executes the effect of Thunder Wand on you when you receive damage\nCooldown: 8 seconds
 thunderreaction_2=Executes the effect of Thunder Wand on you when you receive damage\nCooldown: 4 seconds
-
-meleeskeleton_0=Summon 1 Melee Skeleton that deals 1% enemies max health as damage\nThe damage is drastically reduced against humans and even more against bosses
-meleeskeleton_1=Summon 2 Melee Skeleton that deals 1% enemies max health as damage\nThe damage is drastically reduced against humans and even more against bosses
-meleeskeleton_2=Summon 3 Melee Skeleton that deals 1% enemies max health as damage\nThe damage is drastically reduced against humans and even more against bosses
-
-rangeskeleton_0=Summon 1 Range Skeleton that deals 1% enemies max health as damage\nThe damage is drastically reduced against humans and even more against bosses
-rangeskeleton_1=Summon 2 Range Skeleton that deals 1% enemies max health as damage\nThe damage is drastically reduced against humans and even more against bosses
-rangeskeleton_2=Summon 3 Range Skeleton that deals 1% enemies max health as damage\nThe damage is drastically reduced against humans and even more against bosses
 
 healingarea_0=Releases a magic healing area every 12 seconds,\nrestoring 2% of your max Health to you and all nearby allies\nScales with Magic Healing
 healingarea_1=Releases a magic healing area every 9 seconds,\nrestoring 2% of your max Health to you and all nearby allies\nScales with Magic Healing

@@ -32,7 +32,7 @@ public class BasicWand extends MagicProjectileToolItem implements ItemInteractAc
         super(100);
         this.rarity = Rarity.NORMAL;
         this.attackAnimTime.setBaseValue(600);
-        this.attackDamage.setBaseValue(10.0F).setUpgradedValue(1.0F, 80.0F);
+        this.attackDamage.setBaseValue(10.0F).setUpgradedValue(1.0F, 60.0F);
         this.velocity.setBaseValue(100);
         this.knockback.setBaseValue(0);
         this.attackRange.setBaseValue(400);
